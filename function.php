@@ -16,7 +16,7 @@
       ?>
       <h2>nl2br</h2>
       <?php
-       echo nl2br($str);
+       ecbho nl2br($str);
        ?>
   </body>
 </html>
