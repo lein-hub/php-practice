@@ -7,10 +7,16 @@
   <body>
     <h1><a href="index2.php">WEB</a></h1>
     <ol>
-      <li><a href="index2.php?id=HTML">HTML</a></li>
-      <li><a href="index2.php?id=CSS">CSS</a></li>
-      <li><a href="index2.php?id=JavaScript">JavaScript</a></li>
-      <li><a href="index2.php?id=PHP">PHP</a></li>
+      <?php
+        $list = scandir('./data');
+        $i = 0;
+        while ($i < count($list)) {
+          if ($list[$i] != "." && $list[$i] != "..") {
+            echo "<li><a href=\"index2.php?id=$list[$i]\">$list[$i]</a></li>\n";
+          }
+          $i = $i + 1;
+        }
+       ?>
     </ol>
     <h2>
       <?php

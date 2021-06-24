@@ -12,7 +12,7 @@
     echo $coworkers[3].'<br>';
     var_dump(count($coworkers));
     array_push($coworkers, 'graphittie');
-    var_dump($coworkers);
+    var_dump(count($coworkers));
      ?>
   </body>
 </html>
