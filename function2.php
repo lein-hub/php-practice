@@ -32,9 +32,7 @@
 
         $result = sum2(5,5);
         print($result);
-        // email('egoing@egoing.net', sum2(2,5));
-        // upload('egoing.net', sum2(2,4));
-        file_put_contents('result.txt', $result);
+        file_put_contents('result.txt', $result); // 'result.txt' 라는 파일을 만들고 그 내용으로 $result를 입력한다.
        ?>
   </body>
 </html>
