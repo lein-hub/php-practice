@@ -10,6 +10,7 @@
       <li><a href="index2.php?id=HTML">HTML</a></li>
       <li><a href="index2.php?id=CSS">CSS</a></li>
       <li><a href="index2.php?id=JavaScript">JavaScript</a></li>
+      <li><a href="index2.php?id=PHP">PHP</a></li>
     </ol>
     <h2>
       <?php
