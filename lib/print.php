@@ -8,7 +8,7 @@ function print_title() {
 
 function print_description() {
   if (isset($_GET['id'])) {
-    $filename = $_GET['id'];
+    $filename = basename($_GET['id']);
     echo htmlspecialchars(file_get_contents("data/".$filename));
   } else {
     echo "Hello, PHP";
