@@ -2,12 +2,16 @@
 // var_dump($_POST);
 
 $conn = mysqli_connect('localhost', 'root', '', 'opentutorials');
+$filtered = array(
+  'title'=>mysqli_real_escape_string($conn, $_POST['title']),
+  'description'=>mysqli_real_escape_string($conn, $_POST['description'])
+);
 $sql = "
   insert into topic
    (title, description, created)
    values (
-     '{$_POST['title']}',
-     '{$_POST['description']}',
+     '{$filtered['title']}',
+     '{$filtered['description']}',
      now()
      )
 ";

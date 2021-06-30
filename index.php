@@ -10,7 +10,8 @@ while ($row = mysqli_fetch_array($res)) {
 }
 
 if (isset($_GET['id'])) {
-  $sql = "SELECT * FROM topic where id={$_GET['id']}";
+  $filtered_id = mysqli_real_escape_string($conn, $_GET['id']);
+  $sql = "SELECT * FROM topic where id={$filtered_id}";
   $res = mysqli_query($conn, $sql);
   $row = mysqli_fetch_array($res);
   $article = array(
