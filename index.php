@@ -6,7 +6,8 @@ $res = mysqli_query($conn, $sql);
 
 $list = '';
 while ($row = mysqli_fetch_array($res)) {
-  $list = $list."<li><a href=/index.php?id={$row['id']}>{$row['title']}</a></li>";
+  $escaped_title = htmlspecialchars($row['title']);
+  $list = $list."<li><a href=/index.php?id={$row['id']}>{$escaped_title}</a></li>";
 }
 
 if (isset($_GET['id'])) {
@@ -15,8 +16,8 @@ if (isset($_GET['id'])) {
   $res = mysqli_query($conn, $sql);
   $row = mysqli_fetch_array($res);
   $article = array(
-    'title'=>$row['title'],
-    'description'=>$row['description']
+    'title'=>htmlspecialchars($row['title']),
+    'description'=>htmlspecialchars($row['description'])
   );
 } else {
   $article = array(
